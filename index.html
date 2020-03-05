@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book List App</title>
+
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0//css/font-awesome.min.css">
+
+    <style>
+        .btn-extend{ width: 100%; }
+
+        .text-capitalize{ text-transform: capitalize !important; }
+    </style>
+</head>
+<body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <div class="container center">
+        <div class="row my-row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">
+                                    <h4 class="red-text text-darken-3">
+                                        <span class="blue-text text-darken-3">
+                                                <i class="fa fa-book"></i>
+                                                Book</span>List App
+                                    </h4>
+                                    <form id="book-form">
+                                        <div class="input-field">
+                                            <i class="prefix fa fa-pencil"></i>
+                                            <input type="text" required id="title"/>
+                                            <label for="title">Book Title</label>
+                                        </div>
+                                        <div class="input-field">
+                                            <i class="prefix fa fa-user-circle-o"></i>
+                                            <input type="text" required id="author"/>
+                                            <label for="author">Author</label>
+                                        </div>
+                                        <div class="input-field">
+                                            <i class="prefix fa fa-book"></i>
+                                            <input type="number" class="validate" pattern="\d{6}" required id="isbn"/>
+                                            <label for="isbn" 
+                                            data-success="Valid"
+                                            data-error="6 digits are valid">Isbn Number</label>
+                                        </div>
+                                        <div class="input-field">
+                                            <button type="submit" class="btn-extend btn red darken-3">
+                                                <i class="fa fa-plus"></i> Add Book
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title red-text text-darken-3">All Books</div>
+                            <table class="striped responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Isbn</th>
+                                       <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="book-list"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- TODO: check out 'Bootswatch' -->
+    <script src="js/app.js"></script>
+</body>
+</html>
